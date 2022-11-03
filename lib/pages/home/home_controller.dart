@@ -1,9 +1,12 @@
 import 'package:flutter/animation.dart';
 import 'package:flutter_design_patterns/models/home_work_card_model.dart';
+import 'package:flutter_design_patterns/pages/home/home_page_state.dart';
 
 import 'package:get/get.dart';
 
 class HomeController extends GetxController {
+  Rx<HomeState> state = Rx<HomeState>(InitialHomeState());
+
   final List<HomeWorkCardModel> homeWorkCard = [
     HomeWorkCardModel(
       title: 'Title1',
