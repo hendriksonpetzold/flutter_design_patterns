@@ -6,34 +6,64 @@ class HomePageCard extends StatelessWidget {
   final double imageWidth;
   final String title;
   final bool hasButton;
+  final Color cardColor;
+  final double topPadding;
   const HomePageCard({
     Key? key,
     this.bottonWidget,
     required this.title,
+    required this.cardColor,
+    this.topPadding = 24,
     this.hasButton = true,
-    this.imageHeight = 100,
-    this.imageWidth = 100,
+    this.imageHeight = 90,
+    this.imageWidth = 90,
   }) : super(key: key);
-  factory HomePageCard.big(
-      {required String title, required Widget bottonWidget}) {
+
+  factory HomePageCard.big({
+    required String title,
+    required String bottonTextTitle,
+    required String bottonTextDescription,
+    required Color cardColor,
+    double? topPadding,
+  }) {
     return HomePageCard(
-      imageHeight: 50,
-      imageWidth: 50,
+      imageHeight: 60,
+      imageWidth: 60,
+      cardColor: cardColor,
       title: title,
-      bottonWidget: bottonWidget,
+      topPadding: topPadding ?? 24,
+      bottonWidget: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          const SizedBox(
+            height: 16,
+          ),
+          Text(
+            bottonTextTitle,
+            style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+          ),
+          const SizedBox(
+            height: 8,
+          ),
+          Text(bottonTextDescription),
+        ],
+      ),
       hasButton: false,
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.symmetric(
-        vertical: 16,
-        horizontal: 24,
+      padding: EdgeInsets.only(
+        top: topPadding,
+        bottom: 24,
+        left: 24,
+        right: 24,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
-        color: const Color.fromARGB(255, 212, 212, 212),
+        color: cardColor,
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
@@ -44,9 +74,15 @@ class HomePageCard extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Text(title),
+                  Text(
+                    title,
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 20,
+                    ),
+                  ),
                   const SizedBox(
-                    height: 32,
+                    height: 40,
                   ),
                   hasButton
                       ? Container(

@@ -3,6 +3,6 @@ import 'package:get/get.dart';
 
 class Routes {
   static final List<GetPage> routes = [
-    GetPage(name: '/', page: () => const HomePage())
+    GetPage(name: '/', page: () => HomePage())
   ];
 }
