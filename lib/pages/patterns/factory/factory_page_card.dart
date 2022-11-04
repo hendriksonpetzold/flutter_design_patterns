@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class HomePageCard extends StatelessWidget {
+class FactoryPageCard extends StatelessWidget {
   final Widget? bottonWidget;
   final double imageHeight;
   final double imageWidth;
@@ -8,7 +8,7 @@ class HomePageCard extends StatelessWidget {
   final bool hasButton;
   final Color cardColor;
   final double topPadding;
-  const HomePageCard({
+  const FactoryPageCard({
     Key? key,
     this.bottonWidget,
     required this.title,
@@ -19,14 +19,14 @@ class HomePageCard extends StatelessWidget {
     this.imageWidth = 90,
   }) : super(key: key);
 
-  factory HomePageCard.big({
+  factory FactoryPageCard.big({
     required String title,
     required String bottonTextTitle,
     required String bottonTextDescription,
     required Color cardColor,
     double? topPadding,
   }) {
-    return HomePageCard(
+    return FactoryPageCard(
       imageHeight: 60,
       imageWidth: 60,
       cardColor: cardColor,
@@ -92,7 +92,7 @@ class HomePageCard extends StatelessWidget {
                             borderRadius: BorderRadius.circular(5),
                           ),
                           child: const Text(
-                            'Join Now',
+                            'Button',
                             style: TextStyle(
                               color: Colors.white,
                               fontSize: 12,
@@ -105,7 +105,10 @@ class HomePageCard extends StatelessWidget {
               Container(
                 height: imageHeight,
                 width: imageWidth,
-                color: Colors.red,
+                color: Colors.grey,
+                child: const Center(
+                  child: Text('Any image'),
+                ),
               ),
             ],
           ),
