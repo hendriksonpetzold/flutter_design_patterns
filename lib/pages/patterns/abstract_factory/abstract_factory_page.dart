@@ -29,7 +29,7 @@ class AbstractFactoryPage extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                controller.isDarkTheme = !controller.isDarkTheme;
+                controller.theme.isDarkMode = !controller.theme.isDarkMode;
               },
               child: const Text('Change theme'),
             )

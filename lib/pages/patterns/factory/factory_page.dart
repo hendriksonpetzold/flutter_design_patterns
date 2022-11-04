@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_design_patterns/pages/patterns/factory/factory_page_card.dart';
+import 'package:flutter_design_patterns/pages/patterns/singleton/singleton_theme.dart';
 
 class FactoryPage extends StatelessWidget {
   const FactoryPage({Key? key}) : super(key: key);
@@ -16,9 +17,11 @@ class FactoryPage extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const FactoryPageCard(
+              FactoryPageCard(
                 title: 'Simple Card',
-                cardColor: Colors.blue,
+                cardColor: SingletonTheme.getInstance().isDarkMode
+                    ? Colors.orange
+                    : Colors.white,
               ),
               const SizedBox(
                 height: 16,
