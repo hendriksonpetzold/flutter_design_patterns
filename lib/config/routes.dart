@@ -3,6 +3,7 @@ import 'package:flutter_design_patterns/pages/patterns/abstract_factory/abstract
 import 'package:flutter_design_patterns/pages/patterns/adapter/adapter_page.dart';
 import 'package:flutter_design_patterns/pages/patterns/decorator/decorator_page.dart';
 import 'package:flutter_design_patterns/pages/patterns/factory/factory_page.dart';
+import 'package:flutter_design_patterns/pages/patterns/proxy/proxy_page.dart';
 import 'package:flutter_design_patterns/pages/patterns/state/state_page.dart';
 import 'package:get/get.dart';
 
@@ -14,5 +15,6 @@ class Routes {
     GetPage(name: '/decorator', page: () => const DecoratorPage()),
     GetPage(name: '/adapter', page: () => AdapterPage()),
     GetPage(name: '/abstract_factory', page: () => AbstractFactoryPage()),
+    GetPage(name: '/proxy', page: () => const ProxyPage()),
   ];
 }

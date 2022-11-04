@@ -47,6 +47,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Abstract Factory'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/proxy');
+              },
+              child: const Text('Proxy'),
+            ),
           ],
         ),
       ),
