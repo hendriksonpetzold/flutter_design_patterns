@@ -24,7 +24,9 @@ class HomePage extends StatelessWidget {
               child: const Text('Factory'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.toNamed('/state');
+              },
               child: const Text('State'),
             ),
           ],
