@@ -35,6 +35,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Decorator'),
             ),
+            ElevatedButton(
+              onPressed: () {
+                Get.toNamed('/adapter');
+              },
+              child: const Text('Adapter'),
+            ),
           ],
         ),
       ),
